@@ -11,7 +11,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import utc from "dayjs/plugin/utc";
 import { createClient } from "../../../utils/supabase/client";
-import { useSession } from "./SessionProvider";
+import { useSession } from "../context/session";
 import { useEffect, useState } from "react";
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/16/solid";
 import { useAtom } from "jotai";
@@ -38,7 +38,7 @@ interface CommentProps {
   };
 }
 
-export default function Comment({ comment, commentId, id }: CommentProps) {
+function Comment({ comment, commentId, id }: CommentProps) {
   const [likes, setLikes] = useState<Like[]>([]);
   const [hasLiked, setHasLiked] = useState(false);
   const [open, setOpen] = useAtom(commentState);
@@ -235,3 +235,5 @@ export default function Comment({ comment, commentId, id }: CommentProps) {
     </div>
   );
 }
+
+export { Comment };

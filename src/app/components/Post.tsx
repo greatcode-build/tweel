@@ -11,7 +11,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import utc from "dayjs/plugin/utc";
 import { createClient } from "../../../utils/supabase/client";
-import { useSession } from "./SessionProvider";
+import { useSession } from "../context/session";
 import { useEffect, useState } from "react";
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/16/solid";
 import { useRouter } from "next/navigation";

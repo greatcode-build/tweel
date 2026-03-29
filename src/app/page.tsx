@@ -2,7 +2,7 @@
 import Feed from "./components/Feed";
 import Sidebar from "./components/Sidebar";
 import Widgets from "./components/Widgets";
-import { useData } from "./providers/dataProvider";
+import { useData } from "./context";
 
 export default function Home() {
   const { newsResults, randomUsersResults } = useData();

@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { createClient } from "../../../utils/supabase/client";
 import Image from "next/image";
 import dayjs from "dayjs";
-import { useSession } from "./SessionProvider";
+import { useSession } from "../context/session";
 import { useRouter } from "next/navigation";
 
 interface Post {
@@ -24,7 +24,7 @@ interface Post {
   timestamp: string;
 }
 
-export default function Comment() {
+function CommentModal() {
   const supabase = createClient();
   const [open, setOpen] = useAtom(commentState);
   const [post, setPost] = useState<Post | null>(null);
@@ -201,3 +201,5 @@ export default function Comment() {
     </div>
   );
 }
+
+export { CommentModal };

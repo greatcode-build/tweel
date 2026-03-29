@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { createClient } from "../../utils/supabase/server";
-import { SessionProvider } from "./components/SessionProvider";
+import { SessionProvider } from "./context/session";
 import { getNews, getUsers } from "./data";
-import { DataProvider } from "./providers/dataProvider";
-import Comment from "./components/CommentModal";
+import { DataProvider } from "./context";
+import { CommentModal } from "./components/CommentModal";
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +34,7 @@ export default async function RootLayout({
             randomUsersResults={randomUsersResults}
           >
             {children}
-            <Comment />
+            <CommentModal />
           </DataProvider>
         </SessionProvider>
       </body>

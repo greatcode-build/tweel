@@ -12,7 +12,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
-import { useSession } from "./SessionProvider";
+import { useSession } from "../context/session";
 import { createClient } from "../../../utils/supabase/client";
 
 export default function Sidebar() {

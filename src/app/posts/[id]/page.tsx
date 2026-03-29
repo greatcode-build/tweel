@@ -2,13 +2,13 @@
 
 import Sidebar from "@/app/components/Sidebar";
 import Widgets from "@/app/components/Widgets";
-import { useData } from "@/app/providers/dataProvider";
+import { useData } from "@/app/context";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { useParams, useRouter } from "next/navigation";
 import Post from "@/app/components/Post";
 import { useEffect, useState } from "react";
 import { createClient } from "../../../../utils/supabase/client";
-import Comment from "@/app/components/Comment";
+import { Comment } from "@/app/components/Comment";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Post {
